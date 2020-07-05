@@ -1,0 +1,7 @@
+/.idea
+/one-dc/keys
+/one-dc/instance
+target
+node_modules
+*.iml
+latest-image.id

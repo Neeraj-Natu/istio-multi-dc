@@ -1,0 +1,4 @@
+fullnameOverride: service1
+
+image:
+  repository: service1

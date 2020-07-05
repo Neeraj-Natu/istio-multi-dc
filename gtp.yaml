@@ -1,0 +1,24 @@
+apiVersion: admiral.io/v1alpha1
+kind: GlobalTrafficPolicy
+metadata:
+  name: gtp-service1
+  labels:
+    identity: service1
+spec:
+  policy:
+    - dns: service1.global
+      lbtype: TOPOLOGY
+    - dns: service1-dc1.global
+      lbtype: FAILOVER
+      target:
+        - region: kind-dc1
+          weight: 100
+        - region: kind-dc2
+          weight: 0
+    - dns: service1-dc2.global
+      lbtype: FAILOVER
+      target:
+        - region: kind-dc1
+          weight: 0
+        - region: kind-dc2
+          weight: 100
